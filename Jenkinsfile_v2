@@ -1,0 +1,63 @@
+/* groovylint-disable-next-line CompileStatic */
+@NonCPS
+def generateTag() {
+    return "build-" + new Date().format("yyyyMMdd-HHmmss")
+}
+
+pipeline{
+    environment
+    {
+        registry = "swathiguptha/student-form-image"
+        registryCredential = "docker-login"
+    }
+    agent any
+    
+    tools
+    {
+        maven 'Maven'
+    }
+    stages
+    {
+
+        stage('Build')
+        {
+            steps
+            {
+                script
+                {
+                    // sh 'mvn clean install'
+                    sh 'mvn clean package'
+                    sh 'echo ${BUILD_TIMESTAMP}'
+                    tag = generateTag()
+                    image = docker.build("swathiguptha/student-form-image:"+tag)
+                }
+            }
+        }
+        stage('deploy docker image')
+        {
+            steps
+            {
+                script
+                {
+                    docker.withRegistry('',registryCredential)
+                    {
+                        image.push()
+                    }
+                }
+            }
+        }
+        stage('Deploying Rancher to single nodes') 
+        {
+            steps
+            {
+                script
+                {
+
+                    sh 'pwd'
+                    sh 'kubectl --kubeconfig=/home/ubuntu/.kube/config.yaml set image deployment/form-deployment container-0=swathiguptha/student-form-image:'+tag
+                }
+            }
+        }
+
+    }
+}
