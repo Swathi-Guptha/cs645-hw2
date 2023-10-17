@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "student-form-cluster"
+  cluster:
+    server: "https://ec2-44-219-122-128.compute-1.amazonaws.com/k8s/clusters/c-m-zwbvqflv"
+    certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2akNDQ\
+      VdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
+      kdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNV\
+      Fk1TmpneApNVFUyTkRBZUZ3MHlNekV3TURrd01ETXlORFJhRncwek16RXdNRFl3TURNeU5EUmFNR\
+      Vl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV\
+      1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE5qazJPREV4TlRZME1Ga3dFd1lIS29aSXpqMENBU\
+      VlJS29aSXpqMERBUWNEUWdBRVpJeExnQVlJdmJYMgp6N3NnTGc2bUkxUGl3MGRONUlsbENyQVhFS\
+      XA5L1YxTzJpejJRRFN0YVJqcEwvK0VNL0NnOGw4MXIzQVdXZU13CjkyRnZKYXl5bEtOQ01FQXdEZ\
+      1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGT\
+      jFBZU1mVkdSVlVURjcyQlFRN0hNOWtxSkNLTUFvR0NDcUdTTTQ5QkFNQ0Ewa0FNRVlDSVFDcgpGT\
+      jBjR3NUUVlnNHBDN2NZWE5Kd2RHclZKeUlqdkR2M1RxekFEMnM0VWdJaEFQTDJhOENGMytpdmNXY\
+      nlHS0M5CmZBWngvTDZpdUhueVVpYy9FaE83Z3ppdgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0t"
+
+users:
+- name: "student-form-cluster"
+  user:
+    token: "kubeconfig-user-2qf8frmfbm:r7k5k895ncfv8qljcdhq4h6lks9kkcbcpjfzbkvhqhcxqspccbzcjv"
+
+
+contexts:
+- name: "student-form-cluster"
+  context:
+    user: "student-form-cluster"
+    cluster: "student-form-cluster"
+
+current-context: "student-form-cluster"
