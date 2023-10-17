@@ -9,11 +9,6 @@
 <version>1</version>
 <packaging>war</packaging>
 
-<!-- <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-</properties> -->
 
 <dependencies>
     <dependency>
@@ -32,13 +27,13 @@
             <version>3.0.2</version>
         </plugin>
         <plugin>
-            <groupId>org.apache.tomcat.maven</groupId>
-            <artifactId>tomcat7-maven-plugin</artifactId>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
             <version>3.3.2</version> <!-- Adjust the version as needed -->
-            <configuration>
-                <port>8080</port> <!-- Change the port if necessary -->
-                <path>/sg-form</path> <!-- Replace 'YourArtifactID' with your project's artifact ID -->
-            </configuration>
+<!--            <configuration>-->
+<!--                <port>8080</port> &lt;!&ndash; Change the port if necessary &ndash;&gt;-->
+<!--                <path>/sg-form</path> &lt;!&ndash; Replace 'YourArtifactID' with your project's artifact ID &ndash;&gt;-->
+<!--            </configuration>-->
         </plugin>
 
     </plugins>
