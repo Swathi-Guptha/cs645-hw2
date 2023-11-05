@@ -1,3 +1,5 @@
+# Cube Config file from Rancher Cluster
+
 apiVersion: v1
 kind: Config
 clusters:

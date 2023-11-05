@@ -1,3 +1,11 @@
+// Jenkins File for integrating all the components of CI/CD pipeline
+
+
+// # Swathi Guptha - G01393328
+// # Rajas Bipinchandra patil - G01393353
+// # Poorvi Lakkadi - G01389351
+
+
 /* groovylint-disable-next-line CompileStatic */
 @NonCPS
 def generateTag() {
