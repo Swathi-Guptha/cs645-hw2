@@ -53,7 +53,7 @@ pipeline{
                 }
             }
         }
-        stage('Deploying Rancher to single nodes') 
+        stage('Deploying rancher to single nodes') 
         {
             steps
             {
