@@ -61,7 +61,7 @@ pipeline{
                 {
 
                     sh 'pwd'
-                    sh 'kubectl --kubeconfig=/home/ubuntu/.kube/config.yaml set image deployment/form-deployment container-0=swathiguptha/student-form-image:'+tag
+                    sh 'kubectl --kubeconfig=/home/ubuntu/.kube/config.yaml set image deployment/form-deploy container-0=swathiguptha/student-form-image:'+tag
                 }
             }
         }
